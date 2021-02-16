@@ -24,7 +24,7 @@ namespace OWASP.WebGoat.NET
 
         protected void ButtonCheckEmail_Click(object sender, EventArgs e)
         {
-            string[] result = du.GetSecurityQuestionAndAnswer(txtEmail.Text);
+            string[] result = du.GetSecurityQuestionAndAnswerUpdated(txtEmail.Text);
             
             if (string.IsNullOrEmpty(result[0]))
             {

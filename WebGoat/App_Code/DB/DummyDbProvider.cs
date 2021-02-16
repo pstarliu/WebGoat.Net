@@ -61,7 +61,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             return string.Empty;
         }
 
-        public string[] GetSecurityQuestionAndAnswer(string email)
+        public string[] GetSecurityQuestionAndAnswerUpdated(string email)
         {
             return null;
         }

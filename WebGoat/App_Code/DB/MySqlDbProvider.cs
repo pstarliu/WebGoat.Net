@@ -316,13 +316,13 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             return output;
         }
 
-        public string[] GetSecurityQuestionAndAnswer(string email)
+        public string[] GetSecurityQuestionAndAnswerUpdated(string email)
         {
-            string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " + 
-                "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
-                "SecurityQuestions.question_id;";
-                
-            string[] qAndA = new string[2];
+            string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                         String.Format("SecurityQuestions where CustomerLogin.email = '{0}' and CustomerLogin.question_id = ",email) +
+        "SecurityQuestions.question_id;";
+
+        string[] qAndA = new string[2];
             
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
